@@ -47,11 +47,12 @@ counter
 end
 
 def winner(board)
-  turn = turn_count(board) 
+  turn = turn_count(board)
   if won?(board)
-    if turn_count.odd?
+    if turn.odd?
       "X"
-    elsif turn.count.even?
+    elsif turn.even?
+      "O"
     end
   end
 end
