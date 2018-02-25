@@ -37,7 +37,7 @@ def over?(board)
 end
 
 def turn_count(board)
-  counter = 1
+  counter = 0
   board.each do|token|
     if token == "X" || token == "Y"
       counter += 1
@@ -54,5 +54,11 @@ def winner(board)
     elsif turn.even?
       "O"
     end
+  end
+end
+
+def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo.first]
   end
 end
